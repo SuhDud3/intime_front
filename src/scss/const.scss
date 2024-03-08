@@ -1,0 +1,19 @@
+// Colors
+$primary : #ED2557;
+$secondary : #F5872E;
+$black : #535353;
+$white : #FDFFFC;
+$blue : #3CAEA3;
+$grey-secondary : #C38C5F;
+$grey-light : #c0c0c0;
+
+// Font
+@font-face {
+    font-family: 'Roboto Condensed';
+    src: url('../fonts/RobotoCondensed-VariableFont_wght.ttf');
+}
+
+@function darksify($color, $amount) {
+    $darkened-color : mix($color, $black, $amount);
+    @return $darkened-color;
+}

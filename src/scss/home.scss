@@ -1,0 +1,63 @@
+@import "./const";
+
+.container {
+    // padding-top: 100px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 800px;
+    text-align: center;
+    margin: auto;
+}
+
+.slide-top {
+	-webkit-animation: slide-top 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-top 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+          margin-top: 200px;
+}
+
+@-webkit-keyframes slide-top {
+    0% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+    100% {
+      -webkit-transform: translateY(-100px);
+              transform: translateY(-100px);
+    }
+  }
+  @keyframes slide-top {
+    0% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+    100% {
+      -webkit-transform: translateY(-100px);
+              transform: translateY(-100px);
+    }
+  }
+  
+
+body {
+    text-align: center;
+}
+
+h1 {
+    font-size: 50px;
+    margin-bottom: 50px;
+    color: $secondary;
+}
+
+h3 {
+    font-size: 20px;
+    margin-bottom: 50px;
+    color: $black;
+}
+
+#euro_floating {
+    margin-top: 50px;
+    width: 20%;
+}
+
+.toast-RGPD {
+    display: none;
+}

@@ -1,0 +1,23 @@
+@import './const';
+
+.card {
+    width: 150px;
+    height: 70px;
+    border-radius: 15px;
+    background: $white;
+    box-shadow:  20px 20px 60px #bebebe,
+    -20px -20px 60px #ffffff;
+    margin: 20px;
+}
+
+#text {
+    font-weight: bold;
+    padding-top: 10px;
+    margin: 0;
+    font-size: 15px;
+}
+
+#number {
+        margin-top: 3px;
+        font-size: 20px;
+}

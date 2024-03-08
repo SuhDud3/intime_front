@@ -1,0 +1,120 @@
+@import "./const";
+
+* {
+  font-family: Roboto Condensed, sans-serif;
+  color: $black;
+}
+
+body{
+    font-family: 'Open Sans', sans-serif;
+    background: $white;
+    margin: 0 auto 0 auto;  
+    width:100%; 
+    text-align:center;
+    margin: 20px 0px 20px 0px;   
+  }
+  
+  p{
+    font-size:12px;
+    text-decoration: none;
+  }
+  
+  h1{
+    font-size:1.5em;
+    color:$black;
+  }
+  
+  .box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background:$white;
+    width:600px;
+    height: 600px;
+    border-radius:6px;
+    margin: 0 auto 0 auto;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    justify-content: space-between;
+  }
+  
+  .email{
+    background:#ecf0f1;
+    border: #ccc 1px solid;
+    border-bottom: #ccc 2px solid;
+    padding: 8px;
+    width:500px;
+    color:#AAAAAA;
+    font-size:1em;
+    border-radius:4px;
+  }
+  
+  .password{
+    border-radius:4px;
+    background:#ecf0f1;
+    border: #ccc 1px solid;
+    padding: 8px;
+    width:500px;
+    font-size:1em;
+  }
+
+  .password2{
+    border-radius:4px;
+    background:#ecf0f1;
+    border: #ccc 1px solid;
+    padding: 8px;
+    width:500px;
+    font-size:1em;
+  }
+
+  .username{
+    background:#ecf0f1;
+    border: #ccc 1px solid;
+    border-bottom: #ccc 2px solid;
+    padding: 8px;
+    width:500px;
+    color:#AAAAAA;
+    font-size:1em;
+    border-radius:4px;
+  }
+
+  .cluf{
+    padding: 8px;
+    width:500px;
+    font-size:15px;
+  }
+  
+  #sign-up{
+    background:$secondary;
+    width:400px;
+    height: 50px;
+    padding-top:5px;
+    padding-bottom:5px;
+    color:$white;
+    border-radius:25px;
+    border: 1px solid;
+    border-color: darksify($secondary, 70%);
+    float:left;
+    font-weight:600;
+    font-size: 1em;
+  }
+
+img {
+    width: 20%;
+    height: auto;
+}
+
+#rgpd, #sign-in-link{
+  color:$blue;
+}
+
+#already_account{
+  margin-bottom: 20px;
+}
+
+.alert-danger {
+  font-size: 20px;
+  color: $primary;
+  border: 1px solid $primary;
+  border-radius: 5px; 
+  padding: 5px;
+}

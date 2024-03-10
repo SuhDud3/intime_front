@@ -9,6 +9,8 @@ import sha256 from 'crypto-js/sha256';
 function Login() {
     const navigate = useNavigate();
 
+    const url = process.env.API_URL;
+
     let user = {numb : 1};
 
     const [values, setValues] = useState({
@@ -25,7 +27,7 @@ function Login() {
    
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const response = await fetch('http://localhost:5000/auth/login', {
+        const response = await fetch(url + 'auth/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -35,7 +37,6 @@ function Login() {
         const data = await response.json();
         if(response.status === 200){
             user = data.user;
-            // window.location.href = '/dashboard#' + data.user.userID;
             navigate('/dashboard', { state: { user } });
         } else {
             alert(data.message);

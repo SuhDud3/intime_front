@@ -4,17 +4,16 @@ import FooterHome from './components/footer-home';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import sha256 from 'crypto-js/sha256';
-// import 'dotenv/config.js';
 
 function Login() {
     const navigate = useNavigate();
 
-    const url = process.env.API_URL;
+    console.log(process.env.REACT_APP_API_URL);
 
     let user = {numb : 1};
 
     const [values, setValues] = useState({
-        email: '',
+        email: '',  
         password: ''
     });
 
@@ -27,7 +26,7 @@ function Login() {
    
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const response = await fetch(url + 'auth/login', {
+        const response = await fetch('https://intime-back.onrender.com/auth/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

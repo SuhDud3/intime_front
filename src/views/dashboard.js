@@ -2,7 +2,8 @@ import '../scss/dashboard.scss';
 import Header from './components/header';
 import Footer from './components/footer';
 import DisplayUserEpargne from './components/displayUserEpargne.js'
-import UserExpenseMonthly from './components/userExpenseMonthly.js';
+import ExpenseByMonth from './components/expenseByMonth.js'
+import ExpenseByCategory from './components/expenseByCategory.js';
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
@@ -25,7 +26,12 @@ function Dashboard() {
           </div>
         </div>
         <div id='user-expense-monthly'>
-          <UserExpenseMonthly 
+          <ExpenseByMonth 
+            userid = {location.state.user.userID}
+          />
+        </div>
+        <div id='user-expense-category'>
+          <ExpenseByCategory 
             userid = {location.state.user.userID}
           />
         </div>

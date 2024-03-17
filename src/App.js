@@ -5,6 +5,7 @@ import Register from './views/register.js';
 import Login from './views/login.js';
 import Welcome from './views/welcome.js';
 import Dashboard from './views/dashboard.js';
+import Analysis from './views/analysis.js';
 
 
 const App = () => {
@@ -15,6 +16,7 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/test" element={<Welcome />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/analysis" element={<Analysis />} />
       </Routes>
   );
 }

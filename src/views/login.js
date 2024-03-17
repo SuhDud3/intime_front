@@ -8,10 +8,6 @@ import sha256 from 'crypto-js/sha256';
 function Login() {
     const navigate = useNavigate();
 
-    console.log(process.env.REACT_APP_API_URL);
-
-    let user = {numb : 1};
-
     const [values, setValues] = useState({
         email: '',  
         password: ''
@@ -35,7 +31,7 @@ function Login() {
         });
         const data = await response.json();
         if(response.status === 200){
-            user = data.user;
+            let user = data.user;
             navigate('/dashboard', { state: { user } });
         } else {
             alert(data.message);

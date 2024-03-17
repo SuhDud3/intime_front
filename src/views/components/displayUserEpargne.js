@@ -4,8 +4,8 @@ import { useState, useEffect } from 'react';
 function DisplayUserEpargne({ userEpargne }) {
 
     return (
-        <div className='card'>
-            <p id='text'>Votre épargne</p>
+        <div className='card' id='card-display-user-epargne'>
+            <p className='card-title'>Votre épargne</p>
             <p id='number'>{userEpargne} €</p>
         </div>
     );

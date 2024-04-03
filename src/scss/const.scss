@@ -17,3 +17,13 @@ $grey-light : #c0c0c0;
     $darkened-color : mix($color, $black, $amount);
     @return $darkened-color;
 }
+
+* {
+    font-family: Roboto Condensed, sans-serif;
+    color: $black;
+  }
+
+.main {
+    margin-left: 100px;
+    padding: 20px;
+}

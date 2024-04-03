@@ -14,7 +14,7 @@ function Dashboard() {
       <Sidebar 
         user = {location.state.user}
       />
-      <div id="body-dashboard">
+      <div className="main" id="body-dashboard">
         <h1>Bienvenue {location.state.user.username}</h1>
         <div className='list-of-cards'>
           <div id='display-user-epargne'>

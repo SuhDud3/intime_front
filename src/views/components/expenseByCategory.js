@@ -1,3 +1,4 @@
+import '../../scss/expenseByCategory.scss';
 import { useState, useEffect } from 'react';
 import React from 'react';
 import AnyChart from 'anychart-react';
@@ -49,8 +50,9 @@ const ExpenseByCategory = ({ userid }) => {
 
   return (
     <div className='graph'>
-      <div id='graph_container'>
+      <div>
         <AnyChart
+          id='graph-container-expense-by-category'
           type='pie'
           data={expensesByCategory()}
           title='Dépenses par catégorie'

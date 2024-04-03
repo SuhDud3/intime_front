@@ -26,22 +26,22 @@ function Sidebar( {user} ) {
 
 
     return (
-        <div id='sidebar'>
+        <nav id='sidebar'>
             <div id='logo'>
                 <img id="logo_inTime" src={logo_only} alt="logo" className="logo"/>
             </div>
             <div id='menu'>
                 <ul>
                     <li><button onClick={changePage('/dashboard')}>Dashboard</button></li>
+                    <li><button onClick={changePage('/expenses')}>Expenses</button></li>
                     <li><button onClick={changePage('/analysis')}>Analysis</button></li>
-                    {/* <li>Categories</li>
-                    <li>Profile</li> */}
+                    <li><button onClick={changePage('/profile')}>Profile</button></li>
+                    <li><button onClick={changePage('/settings')}>Settings</button></li>
                 </ul>
+                    <button onClick={handleSubmit} id="logout">Se déconnecter</button>
             </div>
-            <div id='logout'>
-                <button onClick={handleSubmit} id="logout">Se déconnecter</button>
-            </div> 
-        </div>
+            
+        </nav>
     );
 }
 

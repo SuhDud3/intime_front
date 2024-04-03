@@ -1,4 +1,4 @@
-import '../../scss/displayUserEpargne.scss';
+import '../../scss/expenseByMonth.scss';
 import { useState, useEffect } from 'react';
 import React from 'react';
 import AnyChart from 'anychart-react';
@@ -37,8 +37,9 @@ const ExpenseByMonth = ({ userid }) => {
 
   return (
     <div className='graph'>
-      <div id='graph_container'>
+      <div>
         <AnyChart
+         id='graph-container-expense-by-month'
           type='column'
           data={byMonth()}
           title='Dépenses mensuelles'

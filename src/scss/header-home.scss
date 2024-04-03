@@ -17,6 +17,12 @@
     padding: 0 20px;
 }
 
+.button-home {
+  a {
+    margin: 5px;
+  }
+}
+
 .btn-header-connect, .btn-header-register {
   background: linear-gradient(to bottom right, $primary, $secondary);
   border: 0;

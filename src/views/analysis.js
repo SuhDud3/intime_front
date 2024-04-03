@@ -13,20 +13,20 @@ function Analysis() {
       <Sidebar 
         user = {location.state.user}
       />
-      <div id="body-analysis">
-        <div id='user-expense-monthly'>
+      <div className="main" id="body-analysis">
+        <div className='graph' id='user-expense-monthly'>
           <ExpenseByMonth 
             userid = {location.state.user.userID}
           />
         </div>
-        <div id='user-expense-category'>
+        <div className='graph' id='user-expense-category'>
           <ExpenseByCategory 
             userid = {location.state.user.userID}
           />
         </div>
       </div>
     </div>
-  );
+  )
 }
 
 export default Analysis;

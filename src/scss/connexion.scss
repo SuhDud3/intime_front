@@ -60,6 +60,8 @@ body{
   }
   
   #sign-in{
+    display: flex;
+    justify-content: center;
     background:$secondary;
     width:400px;
     height: 50px;

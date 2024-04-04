@@ -9,6 +9,7 @@ import Analysis from './views/analysis.js';
 import Profile from './views/profile.js';
 import Settings from './views/settings.js';
 import Expenses from './views/expenses.js';
+import Incomes from './views/incomes.js';
 
 
 const App = () => {
@@ -23,6 +24,7 @@ const App = () => {
         <Route path="/profile" element={<Profile />} />
         <Route path="/settings" element={<Settings />} />
         <Route path="/expenses" element={<Expenses />} />
+        <Route path="/incomes" element={<Incomes />} />
       </Routes>
   );
 }

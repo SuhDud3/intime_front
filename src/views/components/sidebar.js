@@ -44,6 +44,9 @@ function Sidebar( {user} ) {
                     <li><button onClick={changePage('/expenses')}>
                         <img src={logo_expenses} alt="logo_expenses" className="logo"/>
                         Expenses</button></li>
+                    <li><button onClick={changePage('/incomes')}>
+                        <img src={logo_expenses} alt="logo_expenses" className="logo"/>
+                        Incomes</button></li>
                     <li><button onClick={changePage('/analysis')}>
                         <img src={logo_analysis} alt="logo_analysis" className="logo"/>
                         Analysis</button></li>

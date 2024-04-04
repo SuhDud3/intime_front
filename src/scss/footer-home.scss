@@ -1,17 +1,15 @@
 @import './const.scss';
 
-* {
-    font-family: Roboto Condensed, sans-serif;
-  }
-  
+#footer-logo-in-time {
+    width: 10%;
+    height: 10%;
+}
 
 .footer-home {
     background-color: $grey-light;
-    // position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
-    border : 3px solid $white;
 }
 
 .container-footer {

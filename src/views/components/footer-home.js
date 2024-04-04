@@ -5,7 +5,9 @@ function FooterHome() {
     return (
         <div className="footer-home">
             <div className="container-footer">
-                <img id="logo_inTime" src={logo} alt="logo" className="logo"/>
+                {/* <div>
+                    <img id="footer-logo-in-time" src={logo} alt="logo" className="logo"/>
+                </div> */}
                 <div className="us">
                     <h3>Nous</h3>
                     <ul>

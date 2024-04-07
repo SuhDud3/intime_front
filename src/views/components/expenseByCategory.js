@@ -37,6 +37,7 @@ const ExpenseByCategory = ({ userid }) => {
   const fetchCategories = async () => {
     const response = await fetch('http://localhost:5000/category/');
     const data = await response.json();
+    console.log("expense by category", data);
     setCategories(data);
     return data;
   }
@@ -44,6 +45,7 @@ const ExpenseByCategory = ({ userid }) => {
   const fetchExpenses = async () => {
     const response = await fetch('http://localhost:5000/expense/' + userid);
     const data = await response.json();
+    console.log("expense by category", data);
     setExpenses(data);
     return data;
   }

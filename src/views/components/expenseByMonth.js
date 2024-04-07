@@ -2,7 +2,6 @@ import '../../scss/expenseByMonth.scss';
 import { useState, useEffect } from 'react';
 import React from 'react';
 import AnyChart from 'anychart-react';
-import anychart from 'anychart';
 
 const ExpenseByMonth = ({ userid }) => {
   const [data, setData] = useState([]);

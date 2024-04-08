@@ -19,8 +19,13 @@ function DisplayUserTotalExpenses({ userID, userHourlyWage }) {
         setTotalExpenses(total);
     }
 
-    const commaToDot = (string) => {
-        return string.replace(',', '.');
+    const checkType = (value) => {
+        console.log(typeof value);
+        if (typeof value === 'string' && value.includes(',')) {
+            return parseFloat(value.replace(',', '.'));
+        } else {
+            return value;
+        }
     }
 
     return (
@@ -31,7 +36,11 @@ function DisplayUserTotalExpenses({ userID, userHourlyWage }) {
             </div>
             <div>
                 <p className='card-title'>Conversion en heures de travail</p>
-                <p id='number'>{(totalExpenses / commaToDot(userHourlyWage)).toFixed(2)} heures</p>
+                {userHourlyWage === '' || userHourlyWage === null || userHourlyWage === undefined || userHourlyWage === 0 ? 
+                    <p>Veuillez renseigner votre salaire horaire pour obtenir la conversion en heures de travail</p> : 
+                    <p id='number'>{(totalExpenses / checkType(userHourlyWage)).toFixed(2)} heures</p>
+                }
+                
             </div>
         </div>
         

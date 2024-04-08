@@ -4,6 +4,7 @@ import logo_settings from '../../images/settings.png';
 import logo_profile from '../../images/person.png';
 import logo_dashboard from '../../images/dataset.png';
 import logo_expenses from '../../images/account_balance.png';
+import logo_incomes from '../../images/income.png';
 import logo_analysis from '../../images/monitoring.png';
 import logo_logout from '../../images/logout.png';
 import { useNavigate } from 'react-router-dom';
@@ -45,7 +46,7 @@ function Sidebar( {user} ) {
                         <img src={logo_expenses} alt="logo_expenses" className="logo"/>
                         Expenses</button></li>
                     <li><button onClick={changePage('/incomes')}>
-                        <img src={logo_expenses} alt="logo_expenses" className="logo"/>
+                        <img src={logo_incomes} alt="logo_incomes" className="logo"/>
                         Incomes</button></li>
                     <li><button onClick={changePage('/analysis')}>
                         <img src={logo_analysis} alt="logo_analysis" className="logo"/>

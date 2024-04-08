@@ -31,7 +31,6 @@ const IncomeByMonth = ({ userid }) => {
         const response = await fetch('http://localhost:5000/income/user/' + userid);
         const data = await response.json();
         setData(data.income);
-        return data;
     }
     
     return (

@@ -30,7 +30,6 @@ const IncomeByCategory = ({ userid }) => {
         }
         }
         
-        console.log(incomesByCategory);
         return incomesByCategory;
     };
     

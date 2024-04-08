@@ -1,0 +1,25 @@
+@import './const';
+
+#table-historic-expenses {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-top: 20px;
+    
+    th {
+        background-color: $secondary;
+        color: white;
+        font-weight: 400;
+        text-align: left;
+        padding: 10px;
+    }
+    
+    td {
+        padding: 10px;
+        border-bottom: 1px solid $black;
+    }
+    
+    tr:hover {
+        background-color: $grey-secondary;
+    }
+}

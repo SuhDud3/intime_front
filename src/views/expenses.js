@@ -18,6 +18,7 @@ function Expenses() {
             <div id='user-expense'>
                 <DisplayUserTotalExpenses 
                     userID = {location.state.user.userID}
+                    userHourlyWage = {location.state.user.paidByHour}
                 />
             </div>
             <div id='historic-expenses'>

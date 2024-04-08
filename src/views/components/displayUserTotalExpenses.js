@@ -1,7 +1,7 @@
 import '../../scss/displayUserTotalExpenses.scss';
 import { useState, useEffect } from 'react';
 
-function DisplayUserTotalExpenses({ userID }) {
+function DisplayUserTotalExpenses({ userID, userHourlyWage }) {
     const [totalExpenses, setTotalExpenses] = useState(0);
 
     useEffect(() => {
@@ -19,11 +19,22 @@ function DisplayUserTotalExpenses({ userID }) {
         setTotalExpenses(total);
     }
 
+    const commaToDot = (string) => {
+        return string.replace(',', '.');
+    }
+
     return (
         <div className='card' id='card-display-user-total-expenses'>
-            <p className='card-title'>Votre total de dépenses</p>
-            <p id='number'>{totalExpenses} €</p>
+            <div>
+                <p className='card-title'>Votre total de dépenses</p>
+                <p id='number'>{totalExpenses} €</p>
+            </div>
+            <div>
+                <p className='card-title'>Conversion en heures de travail</p>
+                <p id='number'>{(totalExpenses / commaToDot(userHourlyWage)).toFixed(2)} heures</p>
+            </div>
         </div>
+        
     );
 }
 

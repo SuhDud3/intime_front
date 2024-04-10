@@ -85,7 +85,7 @@ function AddExpense({ user }) {
             </Snackbar>
             <Snackbar open={openValidation} autoHideDuration={6000} onClose={handleCloseValidation} anchorOrigin={{ vertical: 'top', horizontal: 'center' }}>
                 <Alert onClose={handleCloseValidation} severity="success" sx={{ width: '100%' }} >
-                Dépense ajoutéeh1
+                Dépense ajoutée
                 </Alert>
             </Snackbar>
             <h1>Ajout d'une dépense</h1>
@@ -112,7 +112,9 @@ function AddExpense({ user }) {
                     ))}
                 </select>
                 </div>
-                <button type="submit">Ajouter</button>
+                <div id='button-add-expense-container'>
+                    <button id='button-add-expense' type="submit">Ajouter</button>
+                </div>
             </form>
         </div>
     )

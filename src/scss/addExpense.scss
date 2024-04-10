@@ -16,6 +16,7 @@
         flex-direction: column;
         text-align: left;
         padding: 1rem;
+
     }
 
     .form-group {
@@ -42,5 +43,31 @@
         border: 1px solid $grey-light;
         border-radius: 5px;
         background-color: $white;
+    }
+}
+
+#button-add-expense-container {
+    display: flex;
+    justify-content: center;
+}
+
+#button-add-expense {
+    color: $black;
+    height: 40px;
+    width: 100px;
+    box-shadow: 12px 12px 24px 0 rgba(0, 0, 0, 0.2),
+    -12px -12px 24px 0 rgba(255, 255, 255, 0.5);
+  width:100px;
+  margin: 15px;
+  border: none;
+  border-radius: 10px;
+
+  display: flex;
+  justify-content: center;
+
+    &:hover {
+        background: #e0e0e0;
+        box-shadow: inset 6px 6px 10px 0 rgba(0, 0, 0, 0.2),
+    inset -6px -6px 10px 0 rgba(255, 255, 255, 0.5);
     }
 }

@@ -50,12 +50,16 @@ const IncomeByCategory = ({ userid }) => {
     return (
         <div className="graph">
         <div>
-            <AnyChart
-            id="graph-container-income-by-category"
-            type="pie"
-            data={incomesByCategory()}
-            title="Revenus par catégorie"
-            />
+            {categories.length === 0 || incomes.length === 0 ? (
+            <p>Vous n'avez pas encore de revenus</p>
+            ) : (
+                <AnyChart
+                id="graph-container-income-by-category"
+                type="pie"
+                data={incomesByCategory()}
+                title="Revenus par catégorie"
+                />
+            )}
         </div>
         </div>
     );

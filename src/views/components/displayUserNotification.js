@@ -8,7 +8,10 @@ function DisplayUserNotification(props) {
         return (
             <div className='card' id='card-display-user-notification'>
                 <p className='card-title'>Notifications</p>
-                <p id='notification'>{userNotification}</p>
+                {userNotification === '' || userNotification === null || userNotification === undefined ?
+                    <p>Vous n'avez pas de notification</p> :
+                    <p id='notification'>{userNotification}</p>
+                }
             </div>
         );
     }

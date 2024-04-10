@@ -31,7 +31,10 @@ function DisplayUserTotalExpenses({ userID, userHourlyWage }) {
         <div className='card' id='card-display-user-total-expenses'>
             <div>
                 <p className='card-title'>Votre total de dépenses</p>
-                <p id='number'>{totalExpenses} €</p>
+                {totalExpenses === 0 ? 
+                    <p>Vous n'avez pas encore de dépenses</p> : 
+                    <p id='number'>{totalExpenses} €</p>
+                }
             </div>
             <div>
                 <p className='card-title'>Conversion en heures de travail</p>

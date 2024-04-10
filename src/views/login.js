@@ -47,11 +47,14 @@ function Login() {
             [e.target.name]: e.target.value
         });
     }
+
+    const urlServer = 'https://intime-back.onrender.com/auth/login';
+    const urlLocal = 'http://localhost:5000/auth/login';
    
     const handleSubmit = async (e) => {
         displayAlertValidation();
         e.preventDefault();
-        const response = await fetch('https://intime-back.onrender.com/auth/login', {
+        const response = await fetch(urlLocal, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

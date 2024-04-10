@@ -135,14 +135,20 @@ function HistoricExpenses() {
                     </tr>
                 </thead>
                 <tbody>
-                    {expensesWithCategories.map(expense => (
-                        <tr key={expense.expenseID}>
-                            <td>{expense.dateOfExpense}</td>
-                            <td>{expense.category}</td>
-                            <td>{expense.amount} €</td>
-                            <td>{expense.hourEquivalent.toFixed(2)}</td>
-                        </tr>
-                    ))}
+                    {expensesWithCategories.length === 0 ?
+                    
+                    <tr>
+                        <td colSpan='4'>Vous n'avez pas encore de dépenses</td>
+                    </tr> :
+                        expensesWithCategories.map(expense => (
+                            <tr key={expense.expenseID}>
+                                <td>{expense.dateOfExpense}</td>
+                                <td>{expense.category}</td>
+                                <td>{expense.amount} €</td>
+                                <td>{expense.hourEquivalent.toFixed(2)}</td>
+                            </tr>
+                        ))
+                    }
                 </tbody>
             </table>
         </div>

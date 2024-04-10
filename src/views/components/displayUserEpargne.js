@@ -6,7 +6,10 @@ function DisplayUserEpargne({ userEpargne }) {
     return (
         <div className='card' id='card-display-user-epargne'>
             <p className='card-title'>Votre épargne</p>
-            <p id='number'>{userEpargne} €</p>
+            {userEpargne === '' || userEpargne === null || userEpargne === undefined ?
+                <p>Vous n'avez pas encore d'épargne</p> :
+                <p id='number'>{userEpargne} €</p>
+            }
         </div>
     );
 }

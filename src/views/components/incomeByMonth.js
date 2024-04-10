@@ -36,12 +36,16 @@ const IncomeByMonth = ({ userid }) => {
     return (
         <div className='graph'>
         <div>
-            <AnyChart
+            {data.length === 0 ? (
+            <p>Vous n'avez pas encore de revenus</p>
+            ) : (
+                <AnyChart
                 id='graph-container-income-by-month'
                 type='column'
                 data={byMonth()}
                 title='Revenus mensuels'
             />
+            )}
         </div>
         </div>
     );

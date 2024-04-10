@@ -37,12 +37,16 @@ const ExpenseByMonth = ({ userid }) => {
   return (
     <div className='graph'>
       <div>
-        <AnyChart
-         id='graph-container-expense-by-month'
-          type='column'
-          data={byMonth()}
-          title='Dépenses mensuelles'
-        />
+        {data.length === 0 ? (
+          <p>Vous n'avez pas encore de dépenses</p>
+        ) : (
+          <AnyChart
+            id='graph-container-expense-by-month'
+            type='column'
+            data={byMonth()}
+            title='Dépenses mensuelles'
+          />
+        )}
       </div>
     </div>
   );

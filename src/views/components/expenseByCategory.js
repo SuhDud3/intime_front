@@ -51,12 +51,16 @@ const ExpenseByCategory = ({ userid }) => {
   return (
     <div className='graph'>
       <div>
-        <AnyChart
-          id='graph-container-expense-by-category'
-          type='pie'
-          data={expensesByCategory()}
-          title='Dépenses par catégorie'
-        />
+        {categories.length === 0 || expenses.length === 0 ? (
+          <p>Vous n'avez pas encore de dépenses</p>
+        ) : (
+          <AnyChart
+            id='graph-container-expense-by-category'
+            type='pie'
+            data={expensesByCategory()}
+            title='Dépenses par catégorie'
+          />
+        )}
       </div>
     </div>
   );

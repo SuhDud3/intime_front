@@ -4,7 +4,7 @@
     max-width: 100%;
     height: auto;
 
-    @media (minimum-width: $phone) {
+    @media (min-width: $phone) {
         display: none;
     }
 }
@@ -16,7 +16,6 @@
     color: #FFFFFF;
     cursor: pointer;
     display: inline-block;
-    // font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     font-size: 16px;
     font-weight: 500;
     line-height: 2.5;

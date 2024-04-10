@@ -1,1 +1,13 @@
 @import "./const";
+
+#add-expense {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#user-expense {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

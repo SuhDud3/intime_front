@@ -1,6 +1,7 @@
 import '../scss/expenses.scss';
 import DisplayUserTotalExpenses from './components/displayUserTotalExpenses';
 import HistoricExpenses from './components/historicExpenses';
+import AddExpense from './components/addExpense';
 import Sidebar from './components/sidebar';
 import { useLocation } from 'react-router-dom';
 
@@ -19,6 +20,11 @@ function Expenses() {
                 <DisplayUserTotalExpenses 
                     userID = {location.state.user.userID}
                     userHourlyWage = {location.state.user.paidByHour}
+                />
+            </div>
+            <div id='add-expense'>
+                <AddExpense 
+                    user = {location.state.user}
                 />
             </div>
             <div id='historic-expenses'>

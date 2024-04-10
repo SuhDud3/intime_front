@@ -1,13 +1,10 @@
 @import "./const";
 
-
-
 .footer-home {
   position: fixed;
 }
 
 body{
-    font-family: 'Open Sans', sans-serif;
     background: $white;
     margin: 0 auto 0 auto;  
     width:100%; 
@@ -36,6 +33,11 @@ body{
     border-radius:6px;
     margin: 0 auto 0 auto;
     box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+
+    @media (max-width: $phone) {
+      width: 90%;
+      margin-top: 20px;
+    }
   }
   
   .email{
@@ -48,6 +50,10 @@ body{
     margin-top:10px;
     font-size:1em;
     border-radius:4px;
+
+    @media (max-width: $phone) {
+      width: 90% !important;
+    }
   }
   
   .password{
@@ -57,6 +63,10 @@ body{
     padding: 8px;
     width:500px;
     font-size:1em;
+
+    @media (max-width: $phone) {
+      width: 90%;
+    }
   }
   
   #sign-in{
@@ -75,16 +85,15 @@ body{
     float:left;
     font-weight:600;
     font-size: 1em;
+
+    @media (max-width: $phone) {
+      width: 200px;
+    }
   }
   
   #sign-in:hover{
     background: darksify($secondary, 90%); 
   }
-  
-img {
-    width: 20%;
-    height: auto;
-}
 
 #forgotten_password, #register-link{
   color:$blue;
@@ -93,3 +102,4 @@ img {
 #no_account{
   margin: 10px 0px 10px 0px;
 }
+

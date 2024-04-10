@@ -18,11 +18,18 @@ $grey-light : #c0c0c0;
     @return $darkened-color;
 }
 
+// Screen
+$phone : 768px;
+
 * {
-    font-family: Roboto Condensed, sans-serif;
+    // font-family: Roboto Condensed, sans-serif;
   }
 
 .main {
     margin-left: 100px;
     padding: 20px;
+
+    @media (max-width: $phone) {
+        margin-left: 0;
+    }
 }

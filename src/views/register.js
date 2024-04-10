@@ -54,8 +54,7 @@ function Register() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        // if (verifySamePassword() && verifyQualityPassword() && verifyEmail() && verifyCluf()) {
-            console.log(values);
+        // if (verifySamePassword() && verifyQualityPassword() && verifyEmail() && verifyCluf()) {*
             const response = await fetch('http://localhost:5000/auth/register', {
                 method: 'POST',
                 headers: {
@@ -64,7 +63,6 @@ function Register() {
                 body: JSON.stringify(values)
             });
             const data = await response.json();
-            console.log(data);
         // } else {
         //     console.log("Erreur dans le formulaire");
         // }
@@ -74,7 +72,7 @@ function Register() {
         <div>
         <HeaderHome />
         <form onSubmit={handleSubmit}>
-            <div className="box">
+            <div className="box" id='box-register'>
             <h1>Inscription</h1>
     
             <input type="email" name="email" placeholder='email' className="email" onChange={handleChange}/>

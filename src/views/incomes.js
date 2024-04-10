@@ -14,7 +14,7 @@ function Incomes() {
                 user = {location.state.user}
             />
             <div className="main" id="body-incomes">
-                <h1>Incomes</h1>
+                <h1>Revenus</h1>
                 <div className='graph' id='user-income-monthly'>
                     <IncomeByMonth 
                         userid = {location.state.user.userID}

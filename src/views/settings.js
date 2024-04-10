@@ -1,9 +1,24 @@
 import '../scss/settings.scss'
 import Sidebar from './components/sidebar'
-import { useLocation } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 
 function Settings() {
     const location = useLocation()
+
+    const navigate = useNavigate();
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const response = await fetch('http://localhost:5000/auth/logout', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        });
+
+        navigate('/');
+        
+    }
 
     return (
         <div>
@@ -12,12 +27,9 @@ function Settings() {
             />
             <div className="main" id="body-settings">
                 <h1>Settings</h1>
-                <div id="settings-info">
-                    <p>Username: {location.state.user.username}</p>
-                    <p>Email: {location.state.user.email}</p>
-                    <p>First Name: {location.state.user.firstName}</p>
-                    <p>Last Name: {location.state.user.lastName}</p>
-                </div>
+                <button onClick={handleSubmit} className='btn-header-disconnect' id="settings_disconnect">
+                        Déconnexion
+                    </button>
             </div>
         </div>
     )

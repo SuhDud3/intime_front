@@ -20,7 +20,6 @@ function DisplayUserTotalExpenses({ userID, userHourlyWage }) {
     }
 
     const checkType = (value) => {
-        console.log(typeof value);
         if (typeof value === 'string' && value.includes(',')) {
             return parseFloat(value.replace(',', '.'));
         } else {

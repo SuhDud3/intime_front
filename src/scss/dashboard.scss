@@ -2,10 +2,18 @@
 
 h1 {
   margin-bottom: 30px;
+
+  @media (max-width: $phone) {
+    margin-top: 40px;
+  }
 }
 
 .list-of-cards {
   width: 50%;
   margin: 0 auto;
+
+  @media (max-width: $phone) {
+    width: 100%;
+  }
 }
 

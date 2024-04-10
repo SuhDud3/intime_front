@@ -8,6 +8,8 @@ function HistoricExpenses() {
 
     const userID = location.state.user.userID;
 
+    const userHourlyWage = location.state.user.paidByHour;
+
     const [expenses, setExpenses] = useState([]);
     const [categories, setCategories] = useState([]);
     const [expensesWithCategories, setExpensesWithCategories] = useState([]);
@@ -36,6 +38,14 @@ function HistoricExpenses() {
         setCategories(data);
     }
 
+    const checkType = (value) => {
+        if (typeof value === 'string' && value.includes(',')) {
+            return parseFloat(value.replace(',', '.'));
+        } else {
+            return value;
+        }
+    }
+
     function combineExpensesAndCategories () {
         let expensesWithCategoriesTemp = [];
         for (let i = 0; i < expenses.length; i++) {
@@ -45,22 +55,83 @@ function HistoricExpenses() {
                 expenseID: expense.expenseID,
                 dateOfExpense: expense.dateOfExpense,
                 category: category.categoryName,
-                amount: expense.amount
+                amount: expense.amount,
+                hourEquivalent: expense.amount / checkType(userHourlyWage)
             });
         }
 
         setExpensesWithCategories(expensesWithCategoriesTemp);
     }
 
+    function sortExpensesByDate() {
+        let expensesWithCategoriesTemp = [...expensesWithCategories];
+        expensesWithCategoriesTemp.sort((a, b) => {
+            let dateA = new Date(a.dateOfExpense);
+            let dateB = new Date(b.dateOfExpense);
+            return dateB - dateA;
+        });
+
+        setExpensesWithCategories(expensesWithCategoriesTemp);
+    }
+
+    function sortExpensesByCategory() {
+        let expensesWithCategoriesTemp = [...expensesWithCategories];
+        expensesWithCategoriesTemp.sort((a, b) => {
+            let categoryA = a.category;
+            let categoryB = b.category;
+            return categoryA.localeCompare(categoryB);
+        });
+
+        setExpensesWithCategories(expensesWithCategoriesTemp);
+    }
+
+    function sortExpensesByAmount() {
+        let expensesWithCategoriesTemp = [...expensesWithCategories];
+        expensesWithCategoriesTemp.sort((a, b) => {
+            let amountA = a.amount;
+            let amountB = b.amount;
+            return amountB - amountA;
+        });
+
+        setExpensesWithCategories(expensesWithCategoriesTemp);
+    }
+
+    function sortExpensesByHourEquivalent() {
+        let expensesWithCategoriesTemp = [...expensesWithCategories];
+        expensesWithCategoriesTemp.sort((a, b) => {
+            let hourA = a.hourEquivalent;
+            let hourB = b.hourEquivalent;
+            return hourB - hourA;
+        });
+
+        setExpensesWithCategories(expensesWithCategoriesTemp);
+    }
+
     return (
         <div className='card' id='card-historic-expenses'>
-            <p className='card-title'>Vos dépenses</p>
-            <table>
+            <table className='table-neumorphic'>
                 <thead>
                     <tr>
-                        <th>Date</th>
-                        <th>Catégorie</th>
-                        <th>Montant</th>
+                        <th>
+                            <button onClick={sortExpensesByDate}>
+                                Date
+                            </button>
+                        </th>
+                        <th>
+                            <button onClick={sortExpensesByCategory}>
+                                Catégorie
+                            </button>
+                        </th>
+                        <th>
+                            <button onClick={sortExpensesByAmount}>
+                                Montant
+                            </button>
+                        </th>
+                        <th>
+                            <button onClick={sortExpensesByHourEquivalent}>
+                                Équivalent heures
+                            </button>
+                        </th>
                     </tr>
                 </thead>
                 <tbody>
@@ -69,6 +140,7 @@ function HistoricExpenses() {
                             <td>{expense.dateOfExpense}</td>
                             <td>{expense.category}</td>
                             <td>{expense.amount} €</td>
+                            <td>{expense.hourEquivalent.toFixed(2)}</td>
                         </tr>
                     ))}
                 </tbody>
